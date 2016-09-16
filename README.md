@@ -1,5 +1,4 @@
-# 
-BookShelf Application
+# BookShelf Application
 
 ## Installation
 1. Make sure you have [bower](http://bower.io/) and  [npm](https://www.npmjs.org/) installed globally
