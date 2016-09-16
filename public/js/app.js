@@ -1,0 +1,1 @@
+angular.module('bookshelfApp', ['ngRoute', 'appRoutes', 'MainCtrl',  'MainService']);

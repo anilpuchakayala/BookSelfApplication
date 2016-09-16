@@ -1,0 +1,45 @@
+<table class="table table-bordered table-striped" ng-init="getBooksList();">
+    
+    <thead>
+      <tr>
+        <td>
+          <a href="#" ng-click="sortType = 'title'; sortReverse = !sortReverse">
+            Title
+            <span ng-show="sortType == 'title' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'title' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'author'; sortReverse = !sortReverse">
+           Author 
+            <span ng-show="sortType == 'author' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'author' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'isbn'; sortReverse = !sortReverse">
+          ISBN
+            <span ng-show="sortType == 'isbn' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'isbn' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td >
+          <a href="#" ng-click="sortType = 'loaned'; sortReverse = !sortReverse">
+          Loaned To
+            <span ng-show="sortType == 'loaned' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'loaned' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr ng-repeat="book in books | orderBy:sortType:sortReverse">
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.isbn }}</td>
+        <td ng-style="book.loaned === 'avilable' && {'background-color':'green'}">{{ book.loaned }}</td>
+      </tr>
+    </tbody>
+    
+  </table>
