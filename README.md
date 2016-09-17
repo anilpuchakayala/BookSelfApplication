@@ -1,5 +1,4 @@
-# Book 
-Shelf Application
+# BookShelf Application
 
 ## Installation
 1. Download the repository
